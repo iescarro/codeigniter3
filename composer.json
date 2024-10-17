@@ -1,0 +1,5 @@
+{
+    "require": {
+        "iescarro/codeigniter3-framework": "^0.0.2"
+    }
+}
