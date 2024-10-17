@@ -1,4 +1,7 @@
 {
+    "name": "iescarro/codeigniter3",
+    "type": "project",
+    "description": "Skeleton app of the CodeIgniter3 framework",
     "require": {
         "iescarro/codeigniter3-framework": "^0.0.2"
     }
