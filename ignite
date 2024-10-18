@@ -1,0 +1,14 @@
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+use CodeIgniter3\Commands\GenerateCommand;
+use CodeIgniter3\Commands\ServeCommand;
+
+$application = new Application();
+
+$application->add(new GenerateCommand());
+$application->add(new ServeCommand());
+$application->run();

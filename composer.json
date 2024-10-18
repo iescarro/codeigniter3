@@ -3,6 +3,13 @@
     "type": "project",
     "description": "Skeleton app of the CodeIgniter3 framework",
     "require": {
-        "iescarro/codeigniter3-framework": "^0.0.2"
+        "iescarro/codeigniter3-framework": "^0.0.2",
+        "symfony/console": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeIgniter3\\": "application/libraries",
+            "CodeIgniter3\\Commands\\": "application/libraries/commands"
+        }
     }
 }
