@@ -6,9 +6,11 @@ use Symfony\Component\Console\Application;
 
 use CodeIgniter3\Commands\GenerateCommand;
 use CodeIgniter3\Commands\ServeCommand;
+use CodeIgniter3\Commands\MakeJobCommand;
 
 $application = new Application();
 
 $application->add(new GenerateCommand());
 $application->add(new ServeCommand());
+$application->add(new MakeJobCommand());
 $application->run();
