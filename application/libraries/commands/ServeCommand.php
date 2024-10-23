@@ -21,7 +21,7 @@ class ServeCommand extends Command
   protected function execute(InputInterface $input, OutputInterface $output): int
   {
     $output->writeln('Starting PHP development server on localhost:9000...');
-    exec('php -S localhost:9000 -t .', $outputLines, $returnCode);
+    exec('php -S localhost:9000 -t public', $outputLines, $returnCode);
 
     if ($returnCode === 0) {
       $output->writeln('<info>Server started successfully!</info>');

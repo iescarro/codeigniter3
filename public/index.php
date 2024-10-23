@@ -90,7 +90,7 @@ switch (ENVIRONMENT) {
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
-$system_path = 'vendor/iescarro/codeigniter3-framework/system';
+$system_path = __DIR__ . '/../vendor/iescarro/codeigniter3-framework/system';
 
 /*
  *---------------------------------------------------------------
@@ -107,7 +107,7 @@ $system_path = 'vendor/iescarro/codeigniter3-framework/system';
  *
  * NO TRAILING SLASH!
  */
-$application_folder = 'application';
+$application_folder = __DIR__ . '/../application';
 
 /*
  *---------------------------------------------------------------

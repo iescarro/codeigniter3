@@ -3,7 +3,7 @@
     "type": "project",
     "description": "Skeleton app of the CodeIgniter3 framework",
     "require": {
-        "iescarro/codeigniter3-framework": "^0.0.2",
+        "iescarro/codeigniter3-framework": "^0.0.6",
         "symfony/console": "^7.1"
     },
     "autoload": {
