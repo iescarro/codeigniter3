@@ -7,15 +7,15 @@ $config = array(
   'mailers' => [
     'smtp' => array(
       'protocol'  => 'smtp',
-      'smtp_host' => 'smtp.hostinger.com',
+      'smtp_host' => 'smtp.example.com',
       'smtp_port' => 465,
-      'smtp_user' => 'noreply@zimhq.com',
-      'smtp_pass' => 'Start123!!!',
+      'smtp_user' => 'your_email@example.com',
+      'smtp_pass' => 'your_password',
       // 'mailtype'  => 'html',
       'charset'   => 'utf-8',
       'newline'   => "\r\n",
       // 'smtp_crypto' => 'tls',
-      'from' => 'noreply@zimhq.com',
+      'from' => 'your_email@example.com',
     )
   ]
 );
