@@ -28,7 +28,7 @@ class GenerateCommand extends Command
     $fields = $input->getArgument('fields');
 
     $generator = new Generator($component, $fields);
-    $generator->scaffold();
+    $generator->scaffold($output);
 
     return Command::SUCCESS;
   }
@@ -48,16 +48,16 @@ class Generator
     }
   }
 
-  function scaffold()
+  function scaffold($output)
   {
-    $this->generate_model();
-    $this->generate_helper();
-    $this->generate_migration();
-    $this->generate_controller();
-    $this->generate_views();
+    $this->generate_model($output);
+    $this->generate_helper($output);
+    $this->generate_migration($output);
+    $this->generate_controller($output);
+    $this->generate_views($output);
   }
 
-  function generate_model()
+  function generate_model($output)
   {
     $dir = 'application/models';
     $class = ucwords($this->component) . '_model';
@@ -97,9 +97,10 @@ class {class} extends CI_Model {
       $content
     );
     file_put_contents($filename, $content);
+    $output->writeln('<info>Model generated successfully!</info>');
   }
 
-  function generate_helper()
+  function generate_helper($output)
   {
     $dir = 'application/helpers';
     $component = lcfirst($this->component);
@@ -124,9 +125,10 @@ function {component}_form() {
       $content
     );
     file_put_contents($filename, $content);
+    $output->writeln('<info>Helper generated successfully!</info>');
   }
 
-  function generate_migration()
+  function generate_migration($output)
   {
     $dir = 'application/migrations';
     $table = lcfirst(pluralize($this->component));
@@ -167,9 +169,10 @@ class Migration_{class} extends CI_Migration {
       $content
     );
     file_put_contents($filename, $content);
+    $output->writeln('<info>Migration generated successfully!</info>');
   }
 
-  function generate_controller()
+  function generate_controller($output)
   {
     $dir = 'application/controllers';
     $class = ucwords(pluralize($this->component));
@@ -226,9 +229,10 @@ class {class} extends CI_Controller {
       $content
     );
     file_put_contents($filename, $content);
+    $output->writeln('<info>Controller generated successfully!</info>');
   }
 
-  function generate_views()
+  function generate_views($output)
   {
     $component = lcfirst($this->component);
     $var = '$' . $component;
@@ -330,6 +334,8 @@ class {class} extends CI_Controller {
       $content
     );
     file_put_contents($filename, $content);
+
+    $output->writeln('<info>Views generated successfully!</info>');
   }
 }
 
