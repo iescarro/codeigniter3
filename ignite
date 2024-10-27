@@ -4,13 +4,20 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 
-use CodeIgniter3\Commands\GenerateCommand;
-use CodeIgniter3\Commands\ServeCommand;
-use CodeIgniter3\Commands\MakeJobCommand;
-
 $application = new Application();
 
-$application->add(new GenerateCommand());
-$application->add(new ServeCommand());
-$application->add(new MakeJobCommand());
+$commands_dir = __DIR__ . '/application/libraries/commands';
+
+if (is_dir($commands_dir)) {
+  foreach (glob($commands_dir . '/*.php') as $filename) {
+    require_once $filename;
+
+    $class_name = 'CodeIgniter3\\Commands\\' . basename($filename, '.php');
+
+    if (class_exists($class_name)) {
+      $application->add(new $class_name());
+    }
+  }
+}
+
 $application->run();
