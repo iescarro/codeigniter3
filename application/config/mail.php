@@ -7,15 +7,15 @@ $config = array(
   'mailers' => [
     'smtp' => array(
       'protocol'  => 'smtp',
-      'smtp_host' => 'smtp.example.com',
-      'smtp_port' => 465,
-      'smtp_user' => 'your_email@example.com',
-      'smtp_pass' => 'your_password',
+      'smtp_host' => getenv('MAIL_HOST'),
+      'smtp_port' => getenv('MAIL_PORT'),
+      'smtp_user' => getenv('MAIL_USERNAME'),
+      'smtp_pass' => getenv('MAIL_PASSWORD'),
       // 'mailtype'  => 'html',
       'charset'   => 'utf-8',
       'newline'   => "\r\n",
       // 'smtp_crypto' => 'tls',
-      'from' => 'your_email@example.com',
+      'from' => getenv('MAIL_FROM_ADDRESS'),
     )
   ]
 );

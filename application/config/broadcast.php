@@ -7,11 +7,11 @@ $config = array(
   'broadcast_drivers' => [
     'pusher' => array(
       'driver' => 'pusher',
-      'key' => 'your_app_key',
-      'secret' => 'your_app_secret',
-      'app_id' => 'your_app_id',
+      'key' => getenv('PUSHER_APP_KEY'),
+      'secret' => getenv('PUSHER_APP_SECRET'),
+      'app_id' => getenv('PUSHER_APP_ID'),
       'options' => [
-        'cluster' => 'your_app_cluster',
+        'cluster' => getenv('PUSHER_APP_CLUSTER'),
         'useTLS' => true,
       ],
     )
