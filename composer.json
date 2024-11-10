@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "iescarro/codeigniter3-framework": "^0.0.18",
-        "symfony/console": "^7.1",
+        "symfony/console": "^7.1"
     },
     "autoload": {
         "psr-4": {
