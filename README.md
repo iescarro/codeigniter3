@@ -12,6 +12,7 @@
 composer create-project iescarro/codeigniter3 blog
 cd blog
 php ignite generate:scaffold Post title:varchar content:text
+cp .env.example .env
 php public/index.php migrate
 php ignite serve
 ```
