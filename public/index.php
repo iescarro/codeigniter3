@@ -91,7 +91,7 @@ switch (ENVIRONMENT) {
  * Set the path if it is not in the same directory as this file.
  */
 $system_path = __DIR__ . '/../vendor/iescarro/codeigniter3-framework/system';
-$root_path = __DIR__ . '../';
+$root_path = __DIR__ . '/../';
 define('ROOT_PATH', $root_path);
 
 /*
