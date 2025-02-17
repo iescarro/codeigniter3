@@ -9,3 +9,8 @@
 <IfModule mod_env.c>
     SetEnv CI_ENV development
 </IfModule>
+
+<FilesMatch "^\.env(\.production|\.stage|\.test)?$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
