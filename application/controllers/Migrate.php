@@ -39,6 +39,8 @@
 // TODO: Shouldn't we move this somewhere?
 class Migrate extends CI_Controller
 {
+  var $migration;
+
   public function index()
   {
     $this->load->library('migration');
