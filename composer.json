@@ -5,8 +5,8 @@
     "homepage": "https://github.com/iescarro/codeigniter3",
     "license": "MIT",
     "require": {
-        "symfony/console": "^7.1"
         "iescarro/codeigniter3-framework": "^0.0.26",
+        "symfony/console": "^7.1"
     },
     "autoload": {
         "psr-4": {
