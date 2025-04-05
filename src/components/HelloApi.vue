@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h3>From API: {{ message }}</h3>
-    <button @click="fetchMessage">Get Message</button>
+  <div class="hello">
+    <h1>{{ message }}</h1>
+    <p>
+      "Hello, world!" message comes from an API call to the CodeIgniter3 backend under the <code>controllers/api/Hello.php</code> controller.<br />
+    </p>
   </div>
 </template>
 
@@ -24,6 +26,9 @@ export default {
         this.message = "Failed to fetch message";
       }
     },
+  },
+  mounted() {
+    this.fetchMessage();
   },
 };
 </script>
