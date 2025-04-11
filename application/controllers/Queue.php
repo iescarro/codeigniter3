@@ -40,7 +40,6 @@ class Queue extends CI_Controller
   function __construct()
   {
     parent::__construct();
-    $this->load->helper(['common']);
     $this->load->database();
     $this->load->jobs();
   }
