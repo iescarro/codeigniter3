@@ -112,4 +112,18 @@ class MY_Model extends CI_Model
         show_error("Unsupported DB driver for db_concat: " . $driver);
     }
   }
+
+  function right($column, $length)
+  {
+    $driver = $this->db->dbdriver;
+    switch ($driver) {
+      case 'mysqli':
+        return "RIGHT($column, $length)";
+      case 'sqlite3':
+        // SQLite uses substr with negative start to get the right side
+        return "SUBSTR($column, -$length)";
+      default:
+        show_error("Unsupported DB driver for right(): " . $driver);
+    }
+  }
 }
