@@ -17,6 +17,8 @@ This is a modernized structure for **CodeIgniter 3**, where the framework is ins
 ```
 composer create-project iescarro/codeigniter3 blog
 cd blog
+chmod -R 775 application/storage/database
+chown -R www-data:www-data application/storage/database  # adjust user if needed
 php ignite generate:scaffold Post title:varchar content:text
 cp .env.example .env
 cp public/.htaccess.example public/.htaccess
