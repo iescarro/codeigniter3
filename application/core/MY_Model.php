@@ -126,4 +126,41 @@ class MY_Model extends CI_Model
         show_error("Unsupported DB driver for right(): " . $driver);
     }
   }
+
+  function date_format($column, $format)
+  {
+    $driver = $this->db->dbdriver;
+
+    switch ($driver) {
+      case 'mysqli':
+        return "DATE_FORMAT($column, '$format')";
+      case 'sqlite3':
+        // Convert MySQL-style format to SQLite format
+        $sqliteFormat = strtr($format, [
+          '%Y' => '%Y',  // Year, 4 digits
+          '%m' => '%m',  // Month, 2 digits
+          '%d' => '%d',  // Day, 2 digits
+          '%H' => '%H',  // Hour (24)
+          '%i' => '%M',  // Minute
+          '%s' => '%S',  // Second
+          // Add more if needed
+        ]);
+        return "STRFTIME('$sqliteFormat', $column)";
+      default:
+        show_error("Unsupported DB driver for date_format(): " . $driver);
+    }
+  }
+
+  function now()
+  {
+    $driver = $this->db->dbdriver;
+    switch ($driver) {
+      case 'mysqli':
+        return "NOW()";
+      case 'sqlite3':
+        return "DATETIME('now')";
+      default:
+        show_error("Unsupported DB driver for now(): " . $driver);
+    }
+  }
 }
