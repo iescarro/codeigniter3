@@ -1,16 +1,38 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine on
- 
+    RewriteEngine On
+
+    # Block access to hidden files and directories (like .git, .env, .vscode)
+    RewriteRule ^(\.|_)?(git|svn|hg|env|vscode|idea) - [F,L]
+
+    # Block sensitive files explicitly
+    RewriteRule ^(composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|pnpm-lock\.yaml)$ - [F,L]
+    RewriteRule ^(phpunit\.xml|artisan|webpack\.config\.js|vite\.config\.js|Gruntfile\.js|gulpfile\.js)$ - [F,L]
+
+    # Block access to dev-only directories
+    RewriteRule ^(src|tests|node_modules|vendor|docs)($|/) - [F,L]
+
+    # Deny direct access to application/ and system/
+    RewriteRule ^(application|system)($|/) - [F,L]
+
+    # CI3 default routing: pass everything to index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
 
 <IfModule mod_env.c>
+    # Adjust environment (production/staging/development)
     SetEnv CI_ENV development
 </IfModule>
 
+# Block all .env files
 <FilesMatch "^\.env(\.production|\.stage|\.test)?$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block backups, configs, sql dumps, etc.
+<FilesMatch "\.(bak|config|sql|dist|ini|sh|swp|inc)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
