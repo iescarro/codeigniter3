@@ -1,23 +1,23 @@
 {
-    "name": "iescarro/codeigniter3",
-    "type": "project",
-    "description": "Skeleton app of the CodeIgniter3 framework",
-    "homepage": "https://github.com/iescarro/codeigniter3",
-    "license": "MIT",
-    "require": {
-        "iescarro/codeigniter3-framework": "^0.0.30",
-        "symfony/console": "^7.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "CodeIgniter3\\": [
-                "application/libraries",
-                "application/core"
-            ],
-            "CodeIgniter3\\Components\\": [
-                "application/components"
-            ],
-            "CodeIgniter3\\Commands\\": "application/libraries/commands"
-        }
+  "name": "iescarro/codeigniter3",
+  "type": "project",
+  "description": "Skeleton app of the CodeIgniter3 framework",
+  "homepage": "https://github.com/iescarro/codeigniter3",
+  "license": "MIT",
+  "require": {
+    "iescarro/codeigniter3-framework": "^0.0.33",
+    "symfony/console": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "CodeIgniter3\\": [
+        "application/libraries",
+        "application/core"
+      ],
+      "CodeIgniter3\\Components\\": [
+        "application/components"
+      ],
+      "CodeIgniter3\\Commands\\": "application/libraries/commands"
     }
+  }
 }
