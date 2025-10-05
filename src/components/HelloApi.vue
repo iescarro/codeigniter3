@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ message }}</h1>
     <p>
-      "Hello, world!" message comes from an API call to the CodeIgniter3 backend under the <code>controllers/api/Hello.php</code> controller.<br />
+      "Hello, world!" message comes from an API call to the CodeIgniter3 backend
+      under the <code>controllers/api/Hello.php</code> controller.<br />
     </p>
   </div>
 </template>
@@ -18,7 +19,7 @@ export default {
   methods: {
     async fetchMessage() {
       try {
-        const r = await axios.get("http://localhost:9000/api/hello");
+        const r = await axios.get("http://localhost:8000/api/hello");
         console.log(r);
         this.message = r.data.message;
       } catch (error) {
