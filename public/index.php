@@ -94,6 +94,8 @@ $system_path = __DIR__ . '/../vendor/iescarro/codeigniter3-framework/system';
 $root_path = __DIR__ . '/../';
 define('ROOT_PATH', $root_path);
 
+require_once(ROOT_PATH . '/vendor/autoload.php');
+
 /*
  *---------------------------------------------------------------
  * APPLICATION DIRECTORY NAME
@@ -109,7 +111,7 @@ define('ROOT_PATH', $root_path);
  *
  * NO TRAILING SLASH!
  */
-$application_folder = __DIR__ . '/../application';
+$application_folder = ROOT_PATH . '/application';
 
 /*
  *---------------------------------------------------------------
