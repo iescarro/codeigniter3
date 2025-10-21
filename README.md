@@ -26,9 +26,9 @@ php public/index.php migrate
 php ignite serve
 ```
 
-* ✨ ignite generate:scaffold – Generate a model, controller, view, and migration
-* 🗃 .env – Customize your environment variables
-* 🌐 php ignite serve – Launch the local development server
+- ✨ ignite generate:scaffold – Generate a model, controller, view, and migration
+- 🗃 .env – Customize your environment variables
+- 🌐 php ignite serve – Launch the local development server
 
 ## 📁 Directory Structure
 
@@ -52,15 +52,15 @@ npm install
 npm run serve
 ```
 
-* Vue project should be inside /resources/js or similar (customize as needed).
-* You can build the frontend assets and serve them from the public folder.
+- Vue project should be inside /resources/js or similar (customize as needed).
+- You can build the frontend assets and serve them from the public folder.
 
 ## 🧰 Tools & Features
 
-* ✅ CLI with ignite for scaffolding and utilities
-* ✅ Environment-based config via .env
-* ✅ Frontend-ready with Vue.js support
-* ✅ Composer-managed dependencies
+- ✅ CLI with ignite for scaffolding and utilities
+- ✅ Environment-based config via .env
+- ✅ Frontend-ready with Vue.js support
+- ✅ Composer-managed dependencies
 
 ## 📄 License
 
