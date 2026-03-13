@@ -18,5 +18,11 @@
       ],
       "CodeIgniter3\\Commands\\": "application/libraries/commands"
     }
+  },
+  "scripts": {
+    "dev": [
+      "Composer\\Config::disableProcessTimeout",
+      "php -d max_execution_time=0 ignite serve"
+    ]
   }
 }
