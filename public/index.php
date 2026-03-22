@@ -39,6 +39,24 @@
 
 /*
  *---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+$system_path = __DIR__ . '/../vendor/iescarro/codeigniter3-framework/system';
+$root_path = __DIR__ . '/../';
+define('ROOT_PATH', $root_path);
+
+require_once(ROOT_PATH . '/vendor/autoload.php');
+
+use function Util\load_env;
+
+load_env(ROOT_PATH . '/.env');
+
+/*
+ *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
  *
@@ -54,7 +72,7 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+define('ENVIRONMENT', getenv('CI_ENV') ?: 'development');
 
 /*
  *---------------------------------------------------------------
@@ -81,20 +99,6 @@ switch (ENVIRONMENT) {
 		echo 'The application environment is not set correctly.';
 		exit(1); // EXIT_ERROR
 }
-
-/*
- *---------------------------------------------------------------
- * SYSTEM DIRECTORY NAME
- *---------------------------------------------------------------
- *
- * This variable must contain the name of your "system" directory.
- * Set the path if it is not in the same directory as this file.
- */
-$system_path = __DIR__ . '/../vendor/iescarro/codeigniter3-framework/system';
-$root_path = __DIR__ . '/../';
-define('ROOT_PATH', $root_path);
-
-require_once(ROOT_PATH . '/vendor/autoload.php');
 
 /*
  *---------------------------------------------------------------
